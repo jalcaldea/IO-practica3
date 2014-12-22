@@ -1,0 +1,47 @@
+\documentclass[12pt,a4paper,titlepage,twoside]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish,es-noshorthands]{babel}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{xcolor}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{lettrine}
+\usepackage{color}
+\usepackage{float}
+\usepackage[top=2cm,bottom=4cm,outer=2cm,inner=2cm]{geometry}
+\usepackage{fancybox}
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usepackage{emptypage} % Para eliminar encabezado de las páginas en blanco
+\usepackage{chngcntr}
+\usepackage{etoolbox}
+\usepackage{listings}
+\usepackage[font={it,footnotesize},labelfont=bf]{caption}
+\usepackage[colorlinks=true,linkcolor=black,urlcolor=black,citecolor=black]{hyperref}
+\counterwithout{figure}{part}
+\setlength\parindent{0pt} % Quita la indentación
+\newtheorem{teorema}{Teorema}
+\newcommand*{\autores}{
+\begin{tabular}{r l}
+GII+GIS: & Jesús Alcalde Alcázar \\
+		 & Adrián Gutiérrez Jiménez\\
+GIS:  	 & Carlos Vázquez Sánchez
+\end{tabular}
+}
+
+\include{portada}
+\makeatletter
+\makeatother
+\begin{document}
+\portada{Investigación Operativa}{Práctica 2}{Teoría de Colas y Simulación}{\autores}{Móstoles}
+\tableofcontents
+\newpage{\ }
+
+\input{./partes/1.tex}
+
+\input{./partes/2.tex}
+
+
+\end{document}
