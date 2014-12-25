@@ -1,1 +1,25 @@
-\section{Primera parte}
+\section{Introducción}
+
+En este documento se redacta el informe correspondiente al estudio y simulación de un \emph{``CallCenter''}, mendiante el cúal una empresa de telecominicaciones desea implantar un sistema de atención al cliente.\\
+
+En primer lugar vamos a hacer un análisis de dicho sistema.
+
+\subsection{Anális del escenario}
+Éste sistema, según nos informa la compañía, puede recibir información a través de tres puntos y que cada uno de éstos es procesado de manera independiente:
+
+\begin{itemize}
+  \item \textbf{Llamadas por teléfono:} Se procesan en el \emph{``Servicio de tele-operadores''}. Tienen una media de llegadas de 15 llamadas por minuto ($\lambda_{1}$) y cada petición tarda una media de 15 segundos ($\mu_{1}$).
+  \item \textbf{Peticiones vía Internet:} Se procesan mediante \emph{``Programas automáticos''}. Tienen una media de llegadas de 20 peticiones por minuto ($\lambda_{2}$) y cada petición tarda una media de 10 segundos ($\mu_{2}$).
+  \item \textbf{Peticiones vía FAX:} Son procesadas por \emph{``Operadores de fax''}. Tienen una media de llegadas de 3 peticiones por minuto ($\lambda_{3}$) y cada petición tarda una media de 60 segundos ($\mu_{3}$).
+\end{itemize}
+
+Se explicita que las peticiones serán procesadas en orden de llegada y que esperaran en caso de que el servidor esté ocupado, por lo que suponemos que cada servidor dispone de una cola infinita para recibir peticiones.\\
+
+Una vez que son procesados en los servidores mentados anteriormente, las peticiones se trasladas al servicio que corresponda, siguiendo una proporción similar, éstos son los servicios:
+
+\begin{itemize}
+  \item \textbf{Consultas sobre facturas:} Cada petición tiene un tiempo medio de servicio de 1 minuto ($\overline{X}_{4}$). Llegan hasta aquí el 80\% de las peticiones de cada servidor de llegadas más un 10\% de \emph{``reclamaciones de clientes''}.
+  \item \textbf{Solicitudes de nuevos clientes:} Con un tiempo medio de servicio de 3 minutos ($\overline{X}_{5}$). Suponen el 10\% de las peticiones de cada servidor de llegadas.
+  \item \textbf{Reclamaciones de clientes:} Se tardan 4 minutos de media en atender la petición ($\overline{X}_{6}$). Suponen el 2\% de las peticiones de cada servidor de llegadas.
+  \item \textbf{Servicio tecnico :} Cada petición tiene un tiempo medio de servicio de 5 minutos ($\overline{X}_{7}$). Llegan hasta aquí el 8\% de las peticiones de cada servidor de llegadas más un 20\% de \emph{``reclamaciones de clientes''}.
+\end{itemize}
