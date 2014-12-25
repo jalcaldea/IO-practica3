@@ -32,21 +32,21 @@ Para poder entender mejor el sistema, con los datos proporcionados anteriormente
 
 \begin{figure}[H]
   \center{
-  \begin{tikzpicture}[node distance=3cm, auto,>=latex', thick]
+  \begin{tikzpicture}[node distance=1.5cm, auto,>=latex', thick]
 
     \path[->] node (a1) {};
-    \path[->] node[format, right of=a1] (s1) {Teléfono}
+    \path[->] node[format, right=0cm and 3cm of a1] (s1) {Teléfono}
     (a1) edge node {$\lambda_{1}$} (s1);
 
     \path[->] node[below of=a1] (a2) {};
-    \path[->] node[format, right of=a2] (s2) {Internet}
+    \path[->] node[format, right=0cm and 3cm of a2] (s2) {Internet}
     (a2) edge node {$\lambda_{2}$} (s2);
 
     \path[->] node[below of=a2] (a3) {};
-    \path[->] node[format, right of=a3] (s3) {FAX}
+    \path[->] node[format, right=0cm and 3cm of a3] (s3) {FAX}
     (a3) edge node {$\lambda_{3}$} (s3);
 
-    \path[->] node[format, right of=s1] (s4) {Facturas}
+    \path[->] node[format, right=0cm and 4cm of s1] (s4) {Facturas}
     (s1) edge node {1} (s4)
     (s2) edge node {2} (s4)
     (s3) edge node {3} (s4);
