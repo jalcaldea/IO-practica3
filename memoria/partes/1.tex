@@ -68,6 +68,18 @@ Para poder entender mejor el sistema, con los datos proporcionados anteriormente
     (s3) edge node {3} (s7)
     (s6) edge node {4} (s7);
 
+    \path[->] node[right=0cm and 3cm of s4] (f1) {}
+    (s4) edge node {} (f1);
+
+    \path[->] node[right=0cm and 3cm of s5] (f2) {}
+    (s5) edge node {} (f2);
+
+    \path[->] node[right=0cm and 3cm of s6] (f3) {}
+    (s6) edge node {} (f3);
+
+    \path[->] node[right=0cm and 3cm of s7] (f4) {}
+    (s7) edge node {} (f4);
+
   \end{tikzpicture}}
   \caption{Diagrama TQM del sistema}
 \end{figure}
