@@ -23,3 +23,51 @@ Una vez que son procesados en los servidores mentados anteriormente, las peticio
   \item \textbf{Reclamaciones de clientes:} Se tardan 4 minutos de media en atender la petición ($\overline{X}_{6}$). Suponen el 2\% de las peticiones de cada servidor de llegadas.
   \item \textbf{Servicio tecnico :} Cada petición tiene un tiempo medio de servicio de 5 minutos ($\overline{X}_{7}$). Llegan hasta aquí el 8\% de las peticiones de cada servidor de llegadas más un 20\% de \emph{``reclamaciones de clientes''}.
 \end{itemize}
+
+\subsection{Representación visual del sistema}
+Para poder entender mejor el sistema, con los datos proporcionados anteriormente, se ha esbozado el siguiente esquema del sistema utilizando un diagrama TQM (\emph{``Total Quality Management''}):
+
+\tikzstyle{format} = [draw, thin, fill=blue!20]
+\tikzstyle{medium} = [ellipse, draw, thin, fill=green!20, minimum height=2.5em]
+
+\begin{figure}[H]
+  \center{
+  \begin{tikzpicture}[node distance=3cm, auto,>=latex', thick]
+
+    \path[->] node (a1) {};
+    \path[->] node[format, right of=a1] (s1) {Teléfono}
+    (a1) edge node {$\lambda_{1}$} (s1);
+
+    \path[->] node[below of=a1] (a2) {};
+    \path[->] node[format, right of=a2] (s2) {Internet}
+    (a2) edge node {$\lambda_{2}$} (s2);
+
+    \path[->] node[below of=a2] (a3) {};
+    \path[->] node[format, right of=a3] (s3) {FAX}
+    (a3) edge node {$\lambda_{3}$} (s3);
+
+    \path[->] node[format, right of=s1] (s4) {Facturas}
+    (s1) edge node {1} (s4)
+    (s2) edge node {2} (s4)
+    (s3) edge node {3} (s4);
+
+    \path[->] node[format, below of=s4] (s5) {Nuevos Clientes}
+    (s1) edge node {1} (s5)
+    (s2) edge node {2} (s5)
+    (s3) edge node {3} (s5);
+
+    \path[->] node[format, below of=s5] (s6) {Reclamaciones}
+    (s1) edge node {1} (s6)
+    (s2) edge node {2} (s6)
+    (s3) edge node {3} (s6)
+    (s6) edge node {4} (s5);
+
+    \path[->] node[format, below of=s6] (s7) {Ser. Técnico}
+    (s1) edge node {1} (s7)
+    (s2) edge node {2} (s7)
+    (s3) edge node {3} (s7)
+    (s6) edge node {4} (s7);
+
+  \end{tikzpicture}}
+  \caption{Diagrama TQM del sistema}
+\end{figure}
