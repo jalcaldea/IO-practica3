@@ -1,16 +1,16 @@
 \section{Introducción}
 
-En este documento se redacta el informe correspondiente al estudio y simulación de un \emph{``CallCenter''}, mendiante el cúal una empresa de telecominicaciones desea implantar un sistema de atención al cliente.\\
+En este documento se redacta el informe correspondiente al estudio y simulación de un \emph{``CallCenter''}, mendiante el cúal una empresa de telecominicaciones \emph{TeleOne} desea implantar si sistema de atención al cliente.\\
 
 En primer lugar vamos a hacer un análisis de dicho sistema.
 
 \subsection{Anális del escenario}
-Éste sistema, según nos informa la compañía, puede recibir información a través de tres puntos y que cada uno de éstos es procesado de manera independiente:
+Éste sistema, según nos informa la compañía, puede o debe recibir información a través de tres puntos y que cada uno de éstos es procesado de manera independiente:
 
 \begin{itemize}
-  \item \textbf{Llamadas por teléfono:} Se procesan en el \emph{``Servicio de tele-operadores''}. Tienen una media de llegadas de 15 llamadas por minuto ($\lambda_{1}$) y cada petición tarda una media de 15 segundos ($\mu_{1}$).
-  \item \textbf{Peticiones vía Internet:} Se procesan mediante \emph{``Programas automáticos''}. Tienen una media de llegadas de 20 peticiones por minuto ($\lambda_{2}$) y cada petición tarda una media de 10 segundos ($\mu_{2}$).
-  \item \textbf{Peticiones vía FAX:} Son procesadas por \emph{``Operadores de fax''}. Tienen una media de llegadas de 3 peticiones por minuto ($\lambda_{3}$) y cada petición tarda una media de 60 segundos ($\mu_{3}$).
+  \item \textbf{Llamadas por teléfono:} Se procesan en el \emph{``Servicio de tele-operadores''}. Tienen una media de llegadas de 15 llamadas por minuto ($\lambda_{1}$) y cada petición tarda una media de 15 segundos ($\overline{X}_{1}$).
+  \item \textbf{Peticiones vía Internet:} Se procesan mediante \emph{``Programas automáticos''}. Tienen una media de llegadas de 20 peticiones por minuto ($\lambda_{2}$) y cada petición tarda una media de 10 segundos ($\overline{X}_{2}$).
+  \item \textbf{Peticiones vía FAX:} Son procesadas por \emph{``Operadores de fax''}. Tienen una media de llegadas de 3 peticiones por minuto ($\lambda_{3}$) y cada petición tarda una media de 60 segundos ($\overline{X}_{3}$).
 \end{itemize}
 
 Se explicita que las peticiones serán procesadas en orden de llegada y que esperaran en caso de que el servidor esté ocupado, por lo que suponemos que cada servidor dispone de una cola infinita para recibir peticiones.\\
@@ -32,7 +32,7 @@ Para poder entender mejor el sistema, con los datos proporcionados anteriormente
 
 \begin{figure}[H]
   \center{
-  \begin{tikzpicture}[node distance=1.5cm, auto,>=latex', thick]
+  \begin{tikzpicture}[node distance=1.5cm, auto,>=latex', thick,align=center]
 
     \path[->] node (a1) {};
     \path[->] node[format, right=0cm and 3cm of a1] (s1) {Teléfono}
@@ -46,7 +46,7 @@ Para poder entender mejor el sistema, con los datos proporcionados anteriormente
     \path[->] node[format, right=0cm and 3cm of a3] (s3) {FAX}
     (a3) edge node {$\lambda_{3}$} (s3);
 
-    \path[->] node[format, right=0cm and 4cm of s1] (s4) {Facturas}
+    \path[->] node[format, above right=0.3cm and 6cm of s1] (s4) {Facturas}
     (s1) edge node {1} (s4)
     (s2) edge node {2} (s4)
     (s3) edge node {3} (s4);
@@ -68,16 +68,16 @@ Para poder entender mejor el sistema, con los datos proporcionados anteriormente
     (s3) edge node {3} (s7)
     (s6) edge node {4} (s7);
 
-    \path[->] node[right=0cm and 3cm of s4] (f1) {}
+    \path[->] node[right=0cm and 2cm of s4] (f1) {}
     (s4) edge node {} (f1);
 
-    \path[->] node[right=0cm and 3cm of s5] (f2) {}
+    \path[->] node[right=0cm and 2cm of s5] (f2) {}
     (s5) edge node {} (f2);
 
-    \path[->] node[right=0cm and 3cm of s6] (f3) {}
+    \path[->] node[right=0cm and 2cm of s6] (f3) {}
     (s6) edge node {} (f3);
 
-    \path[->] node[right=0cm and 3cm of s7] (f4) {}
+    \path[->] node[right=0cm and 2cm of s7] (f4) {}
     (s7) edge node {} (f4);
 
   \end{tikzpicture}}
