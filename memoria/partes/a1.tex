@@ -1,1 +1,63 @@
 \section{ANEXO: Cálculo de operadores necesarios}
+Uno de los requisitos especificados para la instalación del nuevo \emph{``Call Center''} es que los servidores tienen que tener una tasa de utilización inferior al 85\%. Para que esta condición se culpla, ha de cumplirse que:
+
+\begin{equation}
+p \leq 0,85 \text{ \texttt{siendo:} }
+p = \frac{\lambda_{n}}{m\mu_{n}} \text{ \texttt{y} } \mu_{n}= \frac{1}{\overline{X}_{n}}
+\end{equation}
+
+Para $m= número\ de\ operadores$, $\mu_{n} = tasa\ de\ servicio\ n$, $\overline{X}_{n} = tiempo\ medio\ del\ servicio\ n$ y $\lambda_{n} = tasa\ de\ llegada\ del\ servicio\ n$.\\
+Por lo que para calcular el número de operadores para cada servicio, basta con:
+
+\begin{equation}
+p = \frac{\lambda_{n}}{m\mu_{n}} \rightarrow p = \frac{\lambda_{n}\overline{X}_{n}}{m} \rightarrow m = \frac{\lambda_{n}\overline{X}_{n}}{p}
+\end{equation}
+
+\subsection{Calculo de tasas dellegada}
+Para poder poner en práctica las formula anterior necesitamos saber las tasas de llegada de cada servicio. Para los tres primeros estos datos se corresponden con $\lambda_{1}$, $\lambda_{2}$ y $\lambda_{3}$, respectivamente.\\
+
+Para los demás es necesario saber qué porcentaje de llegadas procede da cada lugar, quedandonos así:
+
+\begin{multline}\\
+  I_{1} = \lambda_{1} \rightarrow I_{1} = 15 \\
+  I_{2} = \lambda_{2} \rightarrow I_{2} = 20 \\
+  I_{3} = \lambda_{3} \rightarrow I_{3} = 3 \\
+  I_{4} = 0.8\cdot (I_{1}+I_{2}+I_{3}) + 0.1I_{6} \rightarrow I_{4} = 30.476 \\
+  I_{5} = 0.1\cdot (I_{1}+I_{2}+I_{3})  \rightarrow I_{5} = 3.8 \\
+  I_{6} = 0.02\cdot (I_{1}+I_{2}+I_{3})  \rightarrow I_{6} = 0.76 \\
+  I_{7} = 0.08\cdot (I_{1}+I_{2}+I_{3})  \rightarrow I_{7} = 3.192 \\
+  \end{multline}
+
+Una vez con estos datos podemos proceder a cálcular el número de operadores.
+
+\subsection{Número de operadores}
+Eso significa que han de cumplirse estos valores:
+
+\begin{multline}\\
+  m_{1} = \frac{\lambda_{1}\overline{X}_{1}}{0.85} \rightarrow m_{1} = \frac{15\cdot 0.25}{0.85} \rightarrow m_{1} = 4.41 \\
+  m_{2} = \frac{\lambda_{2}\overline{X}_{2}}{0.85} \rightarrow m_{2} = \frac{20\cdot 0.16}{0.85} \rightarrow m_{2} = 3.92\\
+  m_{3} = \frac{\lambda_{3}\overline{X}_{3}}{0.85} \rightarrow m_{3} = \frac{3\cdot 1}{0.85} \rightarrow m_{3} = 3.52\\
+  m_{4} = \frac{\lambda_{4}\overline{X}_{4}}{0.85} \rightarrow m_{4} = \frac{30.476\cdot 1}{0.85} \rightarrow m_{4} = 35.85\\
+  m_{5} = \frac{\lambda_{5}\overline{X}_{5}}{0.85} \rightarrow m_{5} = \frac{3.8\cdot 3}{0.85} \rightarrow m_{5} = 13.41\\
+  m_{6} = \frac{\lambda_{6}\overline{X}_{6}}{0.85} \rightarrow m_{6} = \frac{0.76\cdot 4}{0.85} \rightarrow m_{6} = 3.57\\
+  m_{7} = \frac{\lambda_{7}\overline{X}_{7}}{0.85} \rightarrow m_{7} = \frac{3.192\cdot 5}{0.85} \rightarrow m_{7} = 18.77\\
+\end{multline}
+
+Como no se tratan de valores enteros y éstos deben de ser los valores mínimos, el número mínimo de operadores ha de ser:
+
+\begin{table}[H]
+  \begin{center}
+  \begin{tabular}{|c|c|}
+    \hline
+    \textbf{Servicio}       & \textbf{Operadores} \\ \hline
+    Llamadas por Teléfono   & 5                   \\ \hline
+    Peticiones por Internet & 4                   \\ \hline
+    Peticiones por FAX      & 4                   \\ \hline
+    Consulta Facturas      & 36                   \\ \hline
+    Nuevos Clientes      & 14                   \\ \hline
+    Reclamaciones      & 4                   \\ \hline
+    Servicio Técnico      & 19                   \\ \hline
+  \end{tabular}
+\end{center}
+  \caption{Numero de operadores mínimos para lograr una tasa de utilización inferior al 0,85\%}
+\end{table}
