@@ -1,4 +1,4 @@
-\section{ANEXO: Cálculo de operadores necesarios}
+\section{ANEXO}
 Uno de los requisitos especificados para la instalación del nuevo \emph{``Call Center''} es que los servidores tienen que tener una tasa de utilización inferior al 85\%. Para que esta condición se culpla, ha de cumplirse que:
 
 \begin{equation}
@@ -6,17 +6,17 @@ p \leq 0,85 \text{ \texttt{siendo:} }
 p = \frac{\lambda_{n}}{m\mu_{n}} \text{ \texttt{y} } \mu_{n}= \frac{1}{\overline{X}_{n}}
 \end{equation}
 
-Para $m= número\ de\ operadores$, $\mu_{n} = tasa\ de\ servicio\ n$, $\overline{X}_{n} = tiempo\ medio\ del\ servicio\ n$ y $\lambda_{n} = tasa\ de\ llegada\ del\ servicio\ n$.\\
+Para $m= numero\ de\ operadores$, $\mu_{n} = tasa\ de\ servicio\ n$, $\overline{X}_{n} = tiempo\ medio\ del\ servicio\ n$ y $\lambda_{n} = tasa\ de\ llegada\ del\ servicio\ n$.\\
 Por lo que para calcular el número de operadores para cada servicio, basta con:
 
 \begin{equation}
 p = \frac{\lambda_{n}}{m\mu_{n}} \rightarrow p = \frac{\lambda_{n}\overline{X}_{n}}{m} \rightarrow m = \frac{\lambda_{n}\overline{X}_{n}}{p}
 \end{equation}
 
-\subsection{Calculo de tasas dellegada}
+\subsection{Cálculo de las ecuaciones de tráfico}
 Para poder poner en práctica las formula anterior necesitamos saber las tasas de llegada de cada servicio. Para los tres primeros estos datos se corresponden con $\lambda_{1}$, $\lambda_{2}$ y $\lambda_{3}$, respectivamente.\\
 
-Para los demás es necesario saber qué porcentaje de llegadas procede da cada lugar, quedandonos así:
+Para los demás es necesario saber qué porcentaje de llegadas procede da cada lugar, quedándonos lo siguiente:
 
 \begin{multline}\\
   I_{1} = \lambda_{1} \rightarrow I_{1} = 15 \\
@@ -30,7 +30,7 @@ Para los demás es necesario saber qué porcentaje de llegadas procede da cada l
 
 Una vez con estos datos podemos proceder a cálcular el número de operadores.
 
-\subsection{Número de operadores}
+\subsection{Cálculo del número de operadores}
 Eso significa que han de cumplirse estos valores:
 
 \begin{multline}\\
@@ -59,5 +59,8 @@ Como no se tratan de valores enteros y éstos deben de ser los valores mínimos,
     Servicio Técnico      & 19                   \\ \hline
   \end{tabular}
 \end{center}
-  \caption{Numero de operadores mínimos para lograr una tasa de utilización inferior al 0,85\%}
+  \caption{Numero de operadores mínimos para lograr una tasa de utilización inferior al 85\%}
 \end{table}
+
+\subsection{Cálculo de la tasa de uso de cada servidor}
+\subsection{Cálculo del tiempo medio de espera en cada servidor}
