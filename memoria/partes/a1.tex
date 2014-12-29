@@ -95,3 +95,64 @@ Los resultados los agrupamos en la siguiente tabla:
   \caption{Tasa de uso de cada servidor}
   \end{table}
 \subsection{Cálculo del tiempo medio de espera en cada servidor}
+
+El tiempo medio de espera se calcula utilizando la siguiente fórmula:
+
+\begin{equation}
+\overline{R}_{i} = \frac{1}{m_{i}\mu_{i}-I_{i}}
+\end{equation}
+
+Siendo $i$ el servidor.\\
+
+Sustituyendo en la formula obtenemos los siguientes resultados:
+
+\begin{multline}\\
+\overline{R}_{1} = \frac{1}{m_{1}\mu_{1}-I_{1}} = \frac{1}{5\times 4 - 15} = 0,2\\
+\overline{R}_{2} = \frac{1}{m_{2}\mu_{2}-I_{2}} = \frac{1}{4\times 6 - 20} = 0,1\\
+\overline{R}_{3} = \frac{1}{m_{3}\mu_{3}-I_{3}} = \frac{1}{4\times 1 - 3} = 1\\
+\overline{R}_{4} = \frac{1}{m_{4}\mu_{4}-I_{4}} = \frac{1}{36\times 1 - 30,48} = 0,18\\
+\overline{R}_{5} = \frac{1}{m_{5}\mu_{5}-I_{5}} = \frac{1}{14\times 0,33 - 3,8} = 0,82\\
+\overline{R}_{6} = \frac{1}{m_{6}\mu_{6}-I_{6}} = \frac{1}{4\times 0,25 - 0,76} = 4,17\\
+\overline{R}_{7} = \frac{1}{m_{7}\mu_{7}-I_{7}} = \frac{1}{18\times 0,2 - 3,04} = 1,79\\
+\end{multline}
+Los resultados los agrupamos en la siguiente tabla:
+
+\begin{table}[H]
+  \begin{center}
+  \begin{tabular}{|c|c|}
+    \hline
+    \textbf{Servicio}       & \textbf{Tiempo medio de espera en cada servidor(m)} \\ \hline
+    Llamadas por Teléfono   & 0,2                   \\ \hline
+    Peticiones por Internet & 0,1                  \\ \hline
+    Peticiones por FAX      & 1                   \\ \hline
+    Consulta Facturas      & 0,18                   \\ \hline
+    Nuevos Clientes      & 0,82                   \\ \hline
+    Reclamaciones      & 4,17                   \\ \hline
+    Servicio Técnico      & 1,79                   \\ \hline
+  \end{tabular}
+\end{center}
+  \caption{Tiempo medio de espera en cada servidor}
+  \end{table}
+  
+\subsection{Cálculo del tiempo medio de espera para cada tipo de trabajo}
+El tiempo medio de respuesta para cada tipo de trabajo se calcula multiplicando el tiempo medio de espera de cada servidor por la probabilidad de que la solicitud pase por dicho servidor.\\
+
+Es decir:
+\begin{multline}\\
+\overline{R}' = \overline{R}_{1} + 0,8\overline{R}_{4} + 0,1\overline{R}_{5} + 0,02\overline{R}_{6} + 0,08\overline{R}_{7} + 0,02\times 0,1\overline{R}_{4} + 0,02\times 0,2\overline{R}_{7} = 0,66\\
+\overline{R}'' = \overline{R}_{2} + 0,8\overline{R}_{4} + 0,1\overline{R}_{5} + 0,02\overline{R}_{6} + 0,08\overline{R}_{7} + 0,02\times 0,1\overline{R}_{4} + 0,02\times 0,2\overline{R}_{7} = 0,56\\
+\overline{R}''' = \overline{R}_{3} + 0,8\overline{R}_{4} + 0,1\overline{R}_{5} + 0,02\overline{R}_{6} + 0,08\overline{R}_{7} + 0,02\times 0,1\overline{R}_{4} + 0,02\times 0,2\overline{R}_{7} = 1,46\\
+\end{multline}
+
+\subsection{Cálculo del tiempo medio de espera total}
+El tiempo medio de respuesta total se calcula mediante la siguiente fórmula:
+
+\begin{equation}
+\overline{R}_{T} = \frac{\lambda_{1}}{\lambda_{1}+\lambda_{2}+\lambda_{3}}\times \overline{R}' + \frac{\lambda_{2}}{\lambda_{1}+\lambda_{2}+\lambda_{3}}\times \overline{R}'' + \frac{\lambda_{3}}{\lambda_{1}+\lambda_{2}+\lambda_{3}}\times \overline{R}'''
+\end{equation}
+
+Sustituyendo obtenemos el siguiente resultado:
+
+\begin{equation}
+\overline{R}_{T} = \frac{15}{15+20+3}\times 0,66 + \frac{20}{15+20+3}\times 0,56 + \frac{3}{15+20+3}\times 1,46 = 0,67
+\end{equation}
