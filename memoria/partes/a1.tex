@@ -139,7 +139,20 @@ El tiempo medio de respuesta para cada tipo de trabajo se calcula multiplicando 
 
 Es decir:
 \begin{multline}\\
-R' = R_{1} + 0,8R_{4} + 0,1R_{5} + 0,02R_{6} + 0,08R_{7} + 0,02\times 0,1R_{4} + 0,02\times 0,2R_{7} = 0,66\\
-R'' = R_{2} + 0,8R_{4} + 0,1R_{5} + 0,02R_{6} + 0,08R_{7} + 0,02\times 0,1R_{4} + 0,02\times 0,2R_{7} = 0,56\\
-R''' = R_{3} + 0,8R_{4} + 0,1R_{5} + 0,02R_{6} + 0,08R_{7} + 0,02\times 0,1R_{4} + 0,02\times 0,2R_{7} = 1,46\\
+\overline{R}' = \overline{R}_{1} + 0,8\overline{R}_{4} + 0,1\overline{R}_{5} + 0,02\overline{R}_{6} + 0,08\overline{R}_{7} + 0,02\times 0,1\overline{R}_{4} + 0,02\times 0,2\overline{R}_{7} = 0,66\\
+\overline{R}'' = \overline{R}_{2} + 0,8\overline{R}_{4} + 0,1\overline{R}_{5} + 0,02\overline{R}_{6} + 0,08\overline{R}_{7} + 0,02\times 0,1\overline{R}_{4} + 0,02\times 0,2\overline{R}_{7} = 0,56\\
+\overline{R}''' = \overline{R}_{3} + 0,8\overline{R}_{4} + 0,1\overline{R}_{5} + 0,02\overline{R}_{6} + 0,08\overline{R}_{7} + 0,02\times 0,1\overline{R}_{4} + 0,02\times 0,2\overline{R}_{7} = 1,46\\
 \end{multline}
+
+\subsection{Cálculo del tiempo medio de espera total}
+El tiempo medio de respuesta total se calcula mediante la siguiente fórmula:
+
+\begin{equation}
+\overline{R}_{T} = \frac{\lambda_{1}}{\lambda_{1}+\lambda_{2}+\lambda_{3}}\times \overline{R}' + \frac{\lambda_{2}}{\lambda_{1}+\lambda_{2}+\lambda_{3}}\times \overline{R}'' + \frac{\lambda_{3}}{\lambda_{1}+\lambda_{2}+\lambda_{3}}\times \overline{R}'''
+\end{equation}
+
+Sustituyendo obtenemos el siguiente resultado:
+
+\begin{equation}
+\overline{R}_{T} = \frac{15}{15+20+3}\times 0,66 + \frac{20}{15+20+3}\times 0,56 + \frac{3}{15+20+3}\times 1,46 = 0,67
+\end{equation}
