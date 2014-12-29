@@ -133,3 +133,13 @@ Los resultados los agrupamos en la siguiente tabla:
 \end{center}
   \caption{Tiempo medio de espera en cada servidor}
   \end{table}
+  
+\subsection{Cálculo del tiempo medio de espera para cada tipo de trabajo}
+El tiempo medio de respuesta para cada tipo de trabajo se calcula multiplicando el tiempo medio de espera de cada servidor por la probabilidad de que la solicitud pase por dicho servidor.\\
+
+Es decir:
+\begin{multline}\\
+R' = R_{1} + 0,8R_{4} + 0,1R_{5} + 0,02R_{6} + 0,08R_{7} + 0,02\times 0,1R_{4} + 0,02\times 0,2R_{7} = 0,66\\
+R'' = R_{2} + 0,8R_{4} + 0,1R_{5} + 0,02R_{6} + 0,08R_{7} + 0,02\times 0,1R_{4} + 0,02\times 0,2R_{7} = 0,56\\
+R''' = R_{3} + 0,8R_{4} + 0,1R_{5} + 0,02R_{6} + 0,08R_{7} + 0,02\times 0,1R_{4} + 0,02\times 0,2R_{7} = 1,46\\
+\end{multline}
