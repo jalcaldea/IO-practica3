@@ -1,5 +1,5 @@
 \section{ANEXO}
-Uno de los requisitos especificados para la instalación del nuevo \emph{``Call Center''} es que los servidores tienen que tener una tasa de utilización inferior al 85\%. Para que esta condición se culpla, ha de cumplirse que:
+Uno de los requisitos especificados para la instalación del nuevo \emph{``Call Center''} es que los servidores tienen que tener una tasa de utilización inferior al 85\%. Para que esta condición se cumpla, ha de cumplirse que:
 
 \begin{equation}
 p \leq 0,85 \text{ \texttt{siendo:} }
@@ -28,7 +28,7 @@ Para los demás es necesario saber qué porcentaje de llegadas procede da cada l
   I_{7} = 0.08\cdot (I_{1}+I_{2}+I_{3})  \rightarrow I_{7} = 3.192 \\
   \end{multline}
 
-Una vez con estos datos podemos proceder a cálcular el número de operadores.
+Una vez con estos datos podemos calcular el número de operadores.
 
 \subsection{Cálculo del número de operadores}
 Eso significa que han de cumplirse estos valores:
@@ -63,4 +63,35 @@ Como no se tratan de valores enteros y éstos deben de ser los valores mínimos,
 \end{table}
 
 \subsection{Cálculo de la tasa de uso de cada servidor}
+Como ya se ha indicado anteriormente, la tasa de uso de cada servidor la obtenemos mediante la fórmula:
+\begin{equation}
+p = \frac{\lambda_{n}}{m\mu_{n}}
+\end{equation}
+Por tanto, insertamos el número de operarios necesarios calculados y obtenemos la tasa de uso de cada servidor:
+\begin{multline}\\
+p_{1} = \frac{\lambda_{1}}{m_{1}\mu_{1}} = \frac{15}{5\times 4} = 0,75 \\
+p_{2} = \frac{\lambda_{2}}{m_{2}\mu_{2}} = \frac{20}{4\times 6} = 0,8\\
+p_{3} = \frac{\lambda_{3}}{m_{3}\mu_{3}} = \frac{3}{4\times 1} = 0,75\\
+p_{4} = \frac{\lambda_{4}}{m_{4}\mu_{4}} = \frac{30,476}{36\times 1} = 0,8465\\
+p_{5} = \frac{\lambda_{5}}{m_{5}\mu_{5}} = \frac{3,8}{14\times 0,33} = 0,8225\\
+p_{6} = \frac{\lambda_{6}}{m_{6}\mu_{6}} = \frac{0,76}{4\times 0,25} = 0,75\\
+p_{7} = \frac{\lambda_{7}}{m_{7}\mu_{7}} = \frac{3,192}{19\times 0,2} = 0,84\\
+\end{multline}
+Los resultados los agrupamos en la siguiente tabla:
+\begin{table}[H]
+  \begin{center}
+  \begin{tabular}{|c|c|}
+    \hline
+    \textbf{Servicio}       & \textbf{Tasa de uso} \\ \hline
+    Llamadas por Teléfono   & 75\%                   \\ \hline
+    Peticiones por Internet & 80\%                  \\ \hline
+    Peticiones por FAX      & 75\%                   \\ \hline
+    Consulta Facturas      & 84,65\%                   \\ \hline
+    Nuevos Clientes      & 82,25\%                   \\ \hline
+    Reclamaciones      & 75\%                   \\ \hline
+    Servicio Técnico      & 84\%                  \\ \hline
+  \end{tabular}
+\end{center}
+  \caption{Tasa de uso de cada servidor}
+  \end{table}
 \subsection{Cálculo del tiempo medio de espera en cada servidor}
