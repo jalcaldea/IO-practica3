@@ -94,9 +94,9 @@ Los resultados los agrupamos en la siguiente tabla:
 \end{center}
   \caption{Tasa de uso de cada servidor}
   \end{table}
-\subsection{Cálculo del tiempo medio de espera en cada servidor}
+\subsection{Cálculo del tiempo medio de respuesta en cada servidor}
 
-El tiempo medio de espera se calcula utilizando la siguiente fórmula:
+El tiempo medio de respuesta se calcula utilizando la siguiente fórmula:
 
 \begin{equation}
 \overline{R}_{i} = \frac{1}{m_{i}\mu_{i}-I_{i}}
@@ -121,7 +121,7 @@ Los resultados los agrupamos en la siguiente tabla:
   \begin{center}
   \begin{tabular}{|c|c|}
     \hline
-    \textbf{Servicio}       & \textbf{Tiempo medio de espera en cada servidor(m)} \\ \hline
+    \textbf{Servicio}       & \textbf{Tiempo medio de respuesta en cada servidor(m)} \\ \hline
     Llamadas por Teléfono   & 0,2                   \\ \hline
     Peticiones por Internet & 0,1                  \\ \hline
     Peticiones por FAX      & 1                   \\ \hline
@@ -131,11 +131,11 @@ Los resultados los agrupamos en la siguiente tabla:
     Servicio Técnico      & 1,79                   \\ \hline
   \end{tabular}
 \end{center}
-  \caption{Tiempo medio de espera en cada servidor}
+  \caption{Tiempo medio de respuesta en cada servidor}
   \end{table}
   
-\subsection{Cálculo del tiempo medio de espera para cada tipo de trabajo}
-El tiempo medio de respuesta para cada tipo de trabajo se calcula multiplicando el tiempo medio de espera de cada servidor por la probabilidad de que la solicitud pase por dicho servidor.\\
+\subsection{Cálculo del tiempo medio de respuesta para cada tipo de trabajo}
+El tiempo medio de respuesta para cada tipo de trabajo se calcula multiplicando el tiempo medio de respuesta de cada servidor por la probabilidad de que la solicitud pase por dicho servidor.\\
 
 Es decir:
 \begin{multline}\\
@@ -144,7 +144,7 @@ Es decir:
 \overline{R}''' = \overline{R}_{3} + 0,8\overline{R}_{4} + 0,1\overline{R}_{5} + 0,02\overline{R}_{6} + 0,08\overline{R}_{7} + 0,02\times 0,1\overline{R}_{4} + 0,02\times 0,2\overline{R}_{7} = 1,46\\
 \end{multline}
 
-\subsection{Cálculo del tiempo medio de espera total}
+\subsection{Cálculo del tiempo medio de respuesta total}
 El tiempo medio de respuesta total se calcula mediante la siguiente fórmula:
 
 \begin{equation}
