@@ -1,1 +1,54 @@
-\section{Simulación y obtención de resultados}
+\section{\textbf{\underline{Simulación y obtención de resultados}}}
+Una vez realizados los cálculos teóricos, procedemos a crear un modelo de que represente el sistema indicado y simule su funcionamiento durante 24 horas. Para ellos se ha utilizado el software de INCONTROL \textit{Enterprise Dynamics}.\\ 
+Una vez creado el modelo, ADJUNTAR PANTALLAZO DEL MODELO simulamos 150 réplicas durante 24 horas, obteniendo los siguientes datos:\\\\
+\textbf{Nota: }los resultados mostrados directamente por \textit{Enterprise Dynamics} se adjuntan en el \textit{Anexo 2: Resultados simulación}
+\subsection{Saturación servidores}
+\begin{table}[H]
+  \begin{center}
+  \begin{tabular}{|c|c|}
+    \hline
+    \textbf{Servicio}       & \textbf{Nivel de saturación} \\ \hline
+    Llamadas por Teléfono   & 75\%                   \\ \hline
+    Peticiones por Internet & 83,25\%                  \\ \hline
+    Peticiones por FAX      & 75\%                   \\ \hline
+    Consulta Facturas      & 84,62\%                   \\ \hline
+    Nuevos Clientes      & 81,38\%                   \\ \hline
+    Reclamaciones      & 76\%                   \\ \hline
+    Servicio Técnico      & 83,75\%                  \\ \hline
+  \end{tabular}
+\end{center}
+  \caption{Nivel de saturación de cada servidor simulado}
+  \end{table}
+ \subsection{Tiempo medio de espera en las colas} 
+ REVISAR ESTOS DATOS!!!!!!!!!!!!!
+  \begin{table}[H]
+    \begin{center}
+    \begin{tabular}{|c|c|}
+      \hline
+      \textbf{Cola}       & \textbf{Tiempo medio de espera (seg)} \\ \hline
+      Llamadas por Teléfono   & 0                   \\ \hline
+      Peticiones por Internet & 0                  \\ \hline
+      Peticiones por FAX      & 0                   \\ \hline
+      Consulta Facturas      & 0,01                   \\ \hline
+      Nuevos Clientes      & 11,51                   \\ \hline
+      Reclamaciones      & 67,93                   \\ \hline
+      Servicio Técnico      & 17,16                  \\ \hline
+    \end{tabular}
+  \end{center}
+    \caption{Tiempo medio de espera en cola simulado}
+    \end{table}
+    
+  \subsection{Tiempo medio de respuesta para cada servicio}  
+  SACAR ESTOS DATOS!!!!!!!!!!!!!!!!!  
+    \begin{table}[H]
+      \begin{center}
+      \begin{tabular}{|c|c|}
+        \hline
+        \textbf{Servicio}       & \textbf{Tiempo medio de respuesta (min)} \\ \hline
+        Llamadas por Teléfono   & ???                   \\ \hline
+        Peticiones por Internet & ???                 \\ \hline
+        Peticiones por FAX      & ???                   \\ \hline
+      \end{tabular}
+    \end{center}
+      \caption{Tiempo medio de respuesta simulado}
+      \end{table}
