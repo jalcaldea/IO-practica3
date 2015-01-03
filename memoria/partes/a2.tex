@@ -35,3 +35,15 @@ p_{5 simulado} = \frac{X_{5}}{op.s_{5}} = \frac{11,38}{14} = 0,813\\
 p_{6 simulado} = \frac{X_{6}}{op.s_{6}} = \frac{3,04}{4} = 0,76\\
 p_{7 simulado} = \frac{X_{7}}{op.s_{7}} = \frac{15,91}{19} = 0,837\\
 \end{multline}
+
+Además podemos saber el tiempo medio de espera para cada tipo de petición ya que conocemos el tiempo medio de espera en cada servidor, así como en su cola:
+\begin{multline}\\
+\overline{R}_{tlfn} = cola\_tlfn + \overline{X}_{1} + 0.8(cola\_facturas+\overline{X}_{4}) +\\ 0.1(cola\_nuevos+\overline{X}_{5}) + 0.02(cola\_reclamaciones+\overline{X}_{6}) + 0.08(cola\_s.tecnico+\overline{X}_{7})\\ + 0.02*0.1(cola\_facturas+\overline{X}_{4}) + 0.02*0.2(cola\_s.tecnico+\overline{X}_{7}) =\\
+0+15+0.8(0.01+60)+ 0.1(11.51+180) + 0.02(67.93+240) + 0.08(17.16+300) \\+ 0.02*0.1(11.51+180) + 0.02*0.2(17.16+300)\\
+=115.34 \\
+\end{multline}
+Obtener los dos restantes tiempos medios de respuesta es similar al calculado anteriormente, pero cambiando $cola\_tlfn + \overline{X}_{1}$ por $cola\_internet + \overline{X}_{2}$ y $cola\_fax + \overline{X}_{3}$. respectivamente:
+\begin{multline}\\
+\overline{R}_{internet} = 110.34 \\
+\overline{R}_{fax} = 160.34 \\
+\end{multline}

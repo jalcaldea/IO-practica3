@@ -1,2 +1,9 @@
 \section{\textbf{\underline{Conclusiones}}}
-Tras la realización de este estudio podemos concluir que si se dispone de los operadores mínimos indicados anteriormente, el sistema es estable y la saturación de cada estación multiservicio no sobrepasa el 85\%, aunque el servidor de consultas sobre facturas tiene un muy pequeño margen de error al funcionar al 84,62\%. 
+Tras la realización de este estudio podemos concluir lo siguiente:
+\begin{itemize}
+\item Si se dispone de los operadores mínimos indicados anteriormente, el sistema es estable y la saturación de cada estación multiservicio no sobrepasa el 85\%.
+\item Los tres primeros servidores (teleoperadoras, programas automáticos y servicios de fax) van a tener una tasa de uso siempre menor al 85\% y no se formarán colas, ya que despachan trabajos a una velocidad mayor de los que los reciben.
+\item Sin embargo en los cuatro servidores restantes, al depender del azar, si se pueden producir colas. Especialmente delicado es el caso del multiservicio dedicado a las reclamaciones: aunque es el servidor con menos tráfico (1,4 \% del total) y trabajar con suficiente margen (75\%), posee un tiempo en cola muy elevado (67,93 segundos) y una desviación estándar alta.
+\end{itemize}
+
+
