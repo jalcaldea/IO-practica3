@@ -94,7 +94,7 @@ Los resultados los agrupamos en la siguiente tabla:
 \end{center}
   \caption{Tasa de uso de cada servidor}
   \end{table}
-\subsection{Cálculo del tiempo medio de espera en cada servidor}
+\subsection{Cálculo del tiempo medio de respuesta en cada servidor}
 
 El tiempo medio de espera se calcula utilizando la siguiente fórmula:
 
@@ -134,7 +134,7 @@ Los resultados los agrupamos en la siguiente tabla:
   \caption{Tiempo medio de espera en cada servidor}
   \end{table}
   
-\subsection{Cálculo del tiempo medio de espera para cada tipo de trabajo}
+\subsection{Cálculo del tiempo medio de respuesta para cada tipo de trabajo}
 El tiempo medio de respuesta para cada tipo de trabajo se calcula multiplicando el tiempo medio de espera de cada servidor por la probabilidad de que la solicitud pase por dicho servidor.\\
 
 Es decir:
@@ -156,3 +156,28 @@ Sustituyendo obtenemos el siguiente resultado:
 \begin{equation}
 \overline{R}_{T} = \frac{15}{15+20+3}\times 0,66 + \frac{20}{15+20+3}\times 0,71 + \frac{3}{15+20+3}\times 1,46 = 0,75
 \end{equation}
+
+\subsection{Cálculo del tiempo medio de espera en cada servidor}
+El tiempo medio de espera se calcula según la siguiente fórmula:
+
+\begin{equation}
+\overline{W}_{i} = \overline{R}_{i} - \overline{X}_{i}
+\end{equation}
+
+Debido a que ya no existe un único operador por cada servidor, sino que hay $m_{i}$ operadores quedaría de la siguiente forma:
+
+\begin{equation}
+\overline{W}_{i} = \overline{R}_{i} - \frac{\overline{X}_{i}}{m_{i}}
+\end{equation}
+
+Sustituyendo en la fórmula anterior obtenemos los siguientes resultados:
+
+\begin{multline}\\
+\overline{W}_{1} = \overline{R}_{1} - \frac{\overline{X}_{1}}{m_{1}} = 0,2 - \frac{0,25}{5} = 0,15\\
+\overline{W}_{2} = \overline{R}_{2} - \frac{\overline{X}_{2}}{m_{2}} = 0,25 - \frac{0,17}{4} = 0,21\\
+\overline{W}_{3} = \overline{R}_{3} - \frac{\overline{X}_{3}}{m_{3}} = 1 - \frac{1}{4} = 0,75\\
+\overline{W}_{4} = \overline{R}_{4} - \frac{\overline{X}_{4}}{m_{4}} = 0,18 - \frac{1}{36} = 0,15\\
+\overline{W}_{5} = \overline{R}_{5} - \frac{\overline{X}_{5}}{m_{5}} = 0,82 - \frac{3}{14} = 0,61\\
+\overline{W}_{6} = \overline{R}_{6} - \frac{\overline{X}_{6}}{m_{6}} = 4,17 - \frac{4}{4} = 3,17\\
+\overline{W}_{7} = \overline{R}_{7} - \frac{\overline{X}_{7}}{m_{7}} = 1,79 - \frac{5}{18} = 1,51\\
+\end{multline}
