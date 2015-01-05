@@ -46,26 +46,26 @@ Para poder entender mejor el sistema, con los datos proporcionados anteriormente
     \path[->] node[format, right=0cm and 3cm of a3] (s3) {FAX}
     (a3) edge node {$\lambda_{3}$} (s3);
 
-    \path[->] node[format, above right=0.3cm and 6cm of s1] (s4) {Facturas}
-    (s1) edge node {80\%} (s4)
-    (s2) edge node {80\%} (s4)
-    (s3) edge node {80\%} (s4);
+    \path[->] node[format, above right=0.3cm and 6cm of s1] (s5) {Nuevos Clientes}
+    (s1) edge node {} (s5)
+    (s2) edge node {} (s5)
+    (s3) edge node {} (s5);
 
-    \path[->] node[format, below of=s4] (s5) {Nuevos Clientes}
-    (s1) edge node {10\%} (s5)
-    (s2) edge node {10\%} (s5)
-    (s3) edge node {10\%} (s5);
+    \path[->] node[format, below of=s5] (s4) {Facturas}
+    (s1) edge node {} (s4)
+    (s2) edge node {} (s4)
+    (s3) edge node {} (s4);
 
-    \path[->] node[format, below of=s5] (s6) {Reclamaciones}
-    (s1) edge node {2\%} (s6)
-    (s2) edge node {2\%} (s6)
-    (s3) edge node {2\%} (s6)
-    (s6) edge node {10\%} (s4);
+    \path[->] node[format, below of=s4] (s6) {Reclamaciones}
+    (s1) edge node {} (s6)
+    (s2) edge node {} (s6)
+    (s3) edge node {} (s6)
+    (s6) edge [right] node {10\%} (s4);
 
     \path[->] node[format, below of=s6] (s7) {Ser. Técnico}
-    (s1) edge node {8\%} (s7)
-    (s2) edge node {8\%} (s7)
-    (s3) edge node {8\%} (s7)
+    (s1) edge node {} (s7)
+    (s2) edge node {} (s7)
+    (s3) edge node {} (s7)
     (s6) edge node {20\%} (s7);
 
     \path[->] node[right=0cm and 2cm of s4] (f1) {}
@@ -83,3 +83,20 @@ Para poder entender mejor el sistema, con los datos proporcionados anteriormente
   \end{tikzpicture}}
   \caption{Diagrama TQM del sistema}
 \end{figure}
+
+Las peticiones de cada tipo de servicio se distribuyen según los siguientes porcentajes:
+
+\begin{table}[H]
+  \begin{center}
+  \begin{tabular}{|c|c|}
+    \hline
+    \textbf{Servicio}       & \textbf{Porcentaje} \\ \hline
+    Consulta Facturas      & 80\%                   \\ \hline
+    Nuevos Clientes      & 10\%                   \\ \hline
+    Reclamaciones      & 2\%                   \\ 
+    \hline
+    Servicio Técnico      & 8\%                   \\ \hline
+  \end{tabular}
+\end{center}
+  \caption{Distribución de las peticiones de cada servicio}
+\end{table}
