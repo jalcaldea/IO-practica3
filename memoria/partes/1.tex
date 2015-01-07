@@ -5,7 +5,7 @@ En este documento se redacta el informe correspondiente al estudio y simulación
 En primer lugar vamos a hacer un análisis de dicho sistema.
 
 \subsection{Análisis del escenario}
-Éste sistema, según nos informa la compañía, puede o debe recibir información a través de tres puntos y que cada uno de éstos es procesado de manera independiente:
+Este sistema, según nos informa la compañía, puede o debe recibir información a través de tres puntos y cada uno de éstos es procesado de manera independiente:
 
 \begin{itemize}
   \item \textbf{Llamadas por teléfono:} Se procesan en el \emph{``Servicio de tele-operadores''}. Tienen una media de llegadas de 15 llamadas por minuto ($\lambda_{1}$) y cada petición tarda una media de 15 segundos ($\overline{X}_{1}$).
@@ -13,9 +13,9 @@ En primer lugar vamos a hacer un análisis de dicho sistema.
   \item \textbf{Peticiones vía FAX:} Son procesadas por \emph{``Operadores de fax''}. Tienen una media de llegadas de 3 peticiones por minuto ($\lambda_{3}$) y cada petición tarda una media de 60 segundos ($\overline{X}_{3}$).
 \end{itemize}
 
-Se explicita que las peticiones serán procesadas en orden de llegada y que esperaran en caso de que el servidor esté ocupado, por lo que suponemos que cada servidor dispone de una cola infinita para recibir peticiones.\\
+Se explicita que las peticiones serán procesadas en orden de llegada y que esperarán en caso de que el servidor esté ocupado, por lo que suponemos que cada servidor dispone de una cola infinita para recibir peticiones.\\
 
-Una vez que son procesados en los servidores mentados anteriormente, las peticiones se trasladas al servicio que corresponda, siguiendo una proporción similar, éstos son los servicios:
+Una vez que son procesados en los servidores mentados anteriormente, las peticiones se trasladan al servicio que corresponda, siguiendo una proporción similar. Éstos son los servicios:
 
 \begin{itemize}
   \item \textbf{Consultas sobre facturas:} Cada petición tiene un tiempo medio de servicio de 1 minuto ($\overline{X}_{4}$). Llegan hasta aquí el 80\% de las peticiones de cada servidor de llegadas más un 10\% de \emph{``reclamaciones de clientes''}.
